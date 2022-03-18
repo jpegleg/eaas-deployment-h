@@ -3,6 +3,6 @@
 profile k8s-apparmor-deny-write flags=(attach_disconnected) {
   #include <abstractions/base>
   file,
-  # Deny all file wri+tes.
+  # Deny all file writes.
   deny /** w,
 }
