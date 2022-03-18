@@ -1,0 +1,1 @@
+container.apparmor.security.beta.kubernetes.io/CONTAINER-NAME: localhost/PROFILE
