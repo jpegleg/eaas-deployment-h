@@ -1,2 +1,5 @@
 # eaas-deployment-h
-Templates for kubernetes security features
+
+![eaas-template-h](https://carefuldata.com/images/cdlogo.png)
+
+This project is a set of reference templates for kubernetes security features.
