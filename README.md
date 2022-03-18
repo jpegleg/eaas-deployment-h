@@ -1,2 +1,2 @@
 # eaas-deployment-h
-Template for kubernetes security features
+Templates for kubernetes security features
