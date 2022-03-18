@@ -1,0 +1,35 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: deployer
+  namespace: default
+...
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: sdr
+rules:
+- apiGroups: ["", "extensions", "apps"]
+  resources:
+  - deployments
+  verbs: ["list", "get", "describe", "apply", "delete", "patch"]
+...
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: deployer-apps
+  namespace: sacrifice
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: sdr
+subjects:
+- kind: ServiceAccount
+  name: deployer
+  namespace: default
+...
