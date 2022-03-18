@@ -3,7 +3,7 @@
 profile k8s-apparmor-deny-net flags=(attach_disconnected) {
   #include <abstractions/base>
   file,
-  # Deny all network access
+  # Deny inet and raw network access
   deny network inet,
   deny network raw,
 }
