@@ -1,0 +1,8 @@
+seccomp under spec declaration example
+
+securityContext:
+  seccompProfile:
+    type: Localhost
+    localhostProfile: profiles/PROFILE.json
+    
+Profiles stored on node in /var/lib/kubelet/seccomp/profiles/
