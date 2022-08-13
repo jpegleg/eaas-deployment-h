@@ -4,8 +4,6 @@ kind: ServiceAccount
 metadata:
   name: deployer
   namespace: default
-...
-
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -16,8 +14,6 @@ rules:
   resources:
   - deployments
   verbs: ["list", "get", "describe", "apply", "delete", "patch"]
-...
-
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -32,4 +28,12 @@ subjects:
 - kind: ServiceAccount
   name: deployer
   namespace: default
+---
+apiVersion: v1
+kind: Secret
+type: kubernetes.io/service-account-token
+metadata:
+  name: token-secret
+  annotations:
+    kubernetes.io/service-account.name: deployer
 ...
